@@ -1,6 +1,7 @@
 {
   "name": "notorious-rgb",
   "version": "0.0.0",
+  "description": "Convert between RGB and hexadecimal",
   "private": true,
   "directories": {
     "doc": "doc",
