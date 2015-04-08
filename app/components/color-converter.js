@@ -6,9 +6,15 @@ export default Ember.Component.extend({
   blue: null,
   hex: null,
 
-  backgroundColor: function() {
-    return 'background-color:' + this.get('hex');
-  }.property('hex', 'red', 'green', 'blue'),
+  setRandomColor: function() {
+    this.set('red', this.randomColor());
+    this.set('green', this.randomColor());
+    this.set('blue', this.randomColor());
+  }.on('didInsertElement'),
+
+  randomColor: function() {
+    return Math.floor(Math.random() * 255);
+  },
 
   setHexFromRgb: function() {
     var red = parseInt(this.get('red') || 0, 10),
