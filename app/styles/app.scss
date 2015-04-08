@@ -1,5 +1,5 @@
 @import 'bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss';
-$default-width: 1170px;
+$default-width: 940px;
 
 html, body {
   margin: 0;
@@ -24,12 +24,25 @@ body > div {
   width: $default-width;
   margin: 40px auto;
   border-radius: 5px;
+  background-color: white;
+  position:absolute;
+  bottom:0;
+  left:0;
+  right:0;
+  top:0;
+}
+
+.notorious-rbg {
+  background-image: url("images/notoriousRBG.png");
+  background-size: 250px 375px;
+  background-repeat: repeat;
 }
 
 .jumbotron {
   z-index: 1;
   text-align: center;
-  background-color: #C3C3C3;
+  background-color: white;
+  border-radius: 5px;
 }
 
 .converter-panel {

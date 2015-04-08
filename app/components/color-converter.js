@@ -5,6 +5,7 @@ export default Ember.Component.extend({
   green: null,
   blue: null,
   hex: null,
+  isNotorious: null,
 
   setRandomColor: function() {
     this.set('red', this.randomColor());
@@ -27,17 +28,21 @@ export default Ember.Component.extend({
   }.observes('red','green','blue'),
 
   setRgbFromHex: function() {
-    var hex = this.get('hex');
-    var shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
-    hex = hex.replace(shorthandRegex, function(m, r, g, b) {
-        return r + r + g + g + b + b;
-    });
+    if (this.get('hex') === 'RBG') {
+      this.set('isNotorious', true);
+    } else {
+      var hex = this.get('hex');
+      var shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
+      hex = hex.replace(shorthandRegex, function(m, r, g, b) {
+          return r + r + g + g + b + b;
+      });
 
-    var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-    if (result) {
-      this.set('red', parseInt(result[1], 16));
-      this.set('green', parseInt(result[2], 16));
-      this.set('blue', parseInt(result[3], 16));
+      var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+      if (result) {
+        this.set('red', parseInt(result[1], 16));
+        this.set('green', parseInt(result[2], 16));
+        this.set('blue', parseInt(result[3], 16));
+      }
     }
   }.observes('hex'),
 
