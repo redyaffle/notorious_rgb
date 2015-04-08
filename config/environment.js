@@ -41,6 +41,7 @@ module.exports = function(environment) {
 
   if (environment === 'production') {
     ENV.locationType = 'hash';
+    ENV.baseUrl = '/notorious_rgb/';
   }
 
   return ENV;

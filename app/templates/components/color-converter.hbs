@@ -1,16 +1,17 @@
 <div class='converter-panel'>
-  <div class='converter col-md-8'>
+  <div class='col-md-1'></div>
+  <div class='converter col-md-6'>
     <div class="rgb">
       <div class='color-input'>
-        {{input type="number" value=red placeholder="0"}}
+        {{input type="number" value=red placeholder="0" min="0" max="255"}}
         <label>red</label>
       </div>
       <div class='color-input'>
-        {{input type="number" value=green placeholder="0"}}
+        {{input type="number" value=green placeholder="0" min="0" max="255"}}
         <label>green</label>
       </div>
       <div class='color-input'>
-        {{input type="number" value=blue placeholder="0"}}
+        {{input type="number" value=blue placeholder="0" min="0" max="255"}}
         <label>blue</label>
       </div>
     </div>
@@ -23,8 +24,9 @@
     </div>
   </div>
 
-  <div class='swatch-panel col-md-4'>
-    <div class='swatch' {{bind-attr style=backgroundColor}}>
+  <div class='swatch-panel col-md-3'>
+    <div class='swatch' style="background-color: {{hex}}">
     </div>
   </div>
+  <div class='col-md-2'></div>
 </div>

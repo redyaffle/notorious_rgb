@@ -26,12 +26,16 @@ export default Ember.Component.extend({
     hex = hex.replace(shorthandRegex, function(m, r, g, b) {
         return r + r + g + g + b + b;
     });
+
     var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-    console.log('parsing hex color', result);
     if (result) {
       this.set('red', parseInt(result[1], 16));
       this.set('green', parseInt(result[2], 16));
       this.set('blue', parseInt(result[3], 16));
     }
+  }.observes('hex'),
+
+  notifyColorChange: function() {
+    this.sendAction('action', this.get('red'), this.get('green'), this.get('blue'));
   }.observes('hex')
 });
