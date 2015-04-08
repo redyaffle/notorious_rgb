@@ -2,11 +2,23 @@
       style="background-color: rgba({{red}},{{green}},{{blue}},0.5)">
   <div class="color-converter-panel">
     <div class="jumbotron">
-      <h1>R.G.B. to Hex Converter</h1>
-      <h2>(Hex to R.G.B. Converter)</h2>
+      <h1>R.G.B. <span class="left-right-arrow glyphicon glyphicon-resize-horizontal" aria-hidden="true"></span> Hexadecimal </h1>
+      <h1>Hexadecimal <span class="left-right-arrow glyphicon glyphicon-resize-horizontal" aria-hidden="true"></span> R.G.B.</h1>
     </div>
 
-    {{color-converter action="colorChanged" isNotorious=isNotorious}}
+    <div class='instructions-panel row'>
+      <div class='col-md-2'></div>
+      <div class='instructions-body col-md-8'>
+        Switch from RGB to hexadecimal and back again. Valid values of Red, Green, and Blue
+        are between 0 and 255. Valid values of hexademical are between #000000 and #FFFFFF. 
+        The converter accepts shorthand hexadecimal as well (i.e. #GGG === #GGGGGG).
+      </div>
+      <div class='col-md-2'></div>
+    </div>
+
+    <div class='row'>
+      {{color-converter action="colorChanged" isNotorious=isNotorious}}
+    </div>
 
     <div class="footer">
       &copy; 2015 Lauren Ellsworth<br>
