@@ -1,4 +1,5 @@
 import Ember from 'ember';
+/* global mixpanel */
 
 export default Ember.Component.extend({
   red: null,
@@ -8,6 +9,7 @@ export default Ember.Component.extend({
   isNotorious: null,
 
   setRandomColor: function() {
+    mixpanel.track('Visit');
     this.set('red', this.randomColor());
     this.set('green', this.randomColor());
     this.set('blue', this.randomColor());
