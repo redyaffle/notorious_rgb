@@ -18,6 +18,7 @@ export default Ember.Component.extend({
   },
 
   setHexFromRgb: function() {
+    mixpanel.track('RGB edited');
     var red = parseInt(this.get('red') || 0, 10),
         green = parseInt(this.get('green') || 0, 10),
         blue = parseInt(this.get('blue') || 0, 10);
@@ -28,7 +29,9 @@ export default Ember.Component.extend({
   }.observes('red','green','blue'),
 
   setRgbFromHex: function() {
+    mixpanel.track('Hex edited');
     if (this.get('hex') === 'RBG') {
+      mixpanel.track('Easter Egg Found!');
       this.set('isNotorious', true);
     } else {
       var hex = this.get('hex');
