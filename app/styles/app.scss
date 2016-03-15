@@ -20,17 +20,47 @@ body > div {
   font-family: ‘Lucida Sans Unicode’, ‘Lucida Grande’, sans-serif;
 }
 
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: $default-width;
+  height: 50px;
+  text-align: center;
+  padding: 10px;
+  border-top: 1px solid #E7E7E7;
+
+  a {
+    text-decoration: none;
+    color: green;
+  }
+}
+
 .color-converter-panel {
-  z-index: 2;
   width: $default-width;
   margin: 40px auto;
-  border-radius: 5px;
   background-color: white;
   position:absolute;
-  bottom:0;
+  bottom: 50px;
   left:0;
   right:0;
   top:0;
+
+  .jumbotron {
+    text-align: center;
+    background-color: inherit;
+
+    .left-right-arrow {
+      top: 10px;
+    }
+  }
+
+  .instructions-body {
+    padding: 20px;
+    border: 2px dashed black;
+    border-width: 2px 0;
+    font-family: ‘Lucida Sans Unicode’, ‘Lucida Grande’, sans-serif;
+    font-family: ‘Lucida Console’, Monaco, monospace;
+  }
 }
 
 .notorious-rbg {
@@ -39,25 +69,7 @@ body > div {
   background-repeat: repeat;
 }
 
-.jumbotron {
-  z-index: 1;
-  text-align: center;
-  background-color: white;
-  border-radius: 5px;
-  margin: 0;
 
-  .left-right-arrow {
-    top: 10px;
-  }
-}
-
-.instructions-body {
-  padding: 20px;
-  border: 2px dashed black;
-  border-width: 2px 0;
-  font-family: ‘Lucida Sans Unicode’, ‘Lucida Grande’, sans-serif;
-  font-family: ‘Lucida Console’, Monaco, monospace;
-}
 
 .converter-panel {
   margin-top: 60px;
@@ -124,22 +136,6 @@ body > div {
     border-radius: 5px;
   }
 }
-
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: $default-width;
-  height: 50px;
-  text-align: center;
-  padding: 10px;
-  border-top: 1px solid #E7E7E7;
-
-  a {
-    text-decoration: none;
-    color: green;
-  }
-}
-
 
 .rgb {
 }
