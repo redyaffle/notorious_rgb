@@ -8,24 +8,22 @@ html, body {
 }
 
 body > div {
-  min-height: 100%;
-  position: relative;
+  height: 100%;
 }
 
 .notorious-rgb-container {
   min-height: 100%;
   min-width: 100%;
-  position: absolute;
+  padding: 40px 0;
+
   transition: background-color 0.5s;
   font-family: ‘Lucida Sans Unicode’, ‘Lucida Grande’, sans-serif;
+  text-align: center;
 }
 
 .footer {
-  position: absolute;
-  bottom: 0;
   width: $default-width;
   height: 50px;
-  text-align: center;
   padding: 10px;
   border-top: 1px solid #E7E7E7;
 
@@ -37,17 +35,13 @@ body > div {
 
 .color-converter-panel {
   width: $default-width;
-  margin: 40px auto;
+  height: 100%;
+  margin: 0 auto;
   background-color: white;
-  position:absolute;
-  bottom: 50px;
-  left:0;
-  right:0;
-  top:0;
 
   .jumbotron {
-    text-align: center;
     background-color: inherit;
+    margin-bottom: 0;
 
     .left-right-arrow {
       top: 10px;
@@ -58,6 +52,7 @@ body > div {
     padding: 20px;
     border: 2px dashed black;
     border-width: 2px 0;
+    text-align: left;
     font-family: ‘Lucida Sans Unicode’, ‘Lucida Grande’, sans-serif;
     font-family: ‘Lucida Console’, Monaco, monospace;
   }
@@ -69,73 +64,53 @@ body > div {
   background-repeat: repeat;
 }
 
-
-
 .converter-panel {
   margin-top: 60px;
   font-family: ‘Lucida Console’, Monaco, monospace;
-}
 
-.rgb {
-  margin: 0 auto;
-  width: 360px;
-  font-size: 0;
-}
+  .rgb {
+    margin: 0 auto;
+    width: 360px;
+    font-size: 0;
+  }
 
-.color-input {
-  display: inline-block;
-  width: 120px;
-  font-size: 24px;
-
-  input {
-    display: block;
-    height: 80px;
-    width: 80px;
-    border-radius: 5px;
+  .color-input, .hex {
     font-size: 24px;
-    text-align: center;
-    margin: auto;
+
+    input {
+      display: block;
+      height: 80px;
+      border-radius: 5px;
+      text-align: center;
+      margin: auto;
+    }
   }
 
-  label {
-    display: block;
-    text-align: center;
-  }
-}
+  .color-input {
+    display: inline-block;
+    width: 120px;
 
-.hex {
-  font-size: 24px;
-  margin: 30px auto;
-  width: 200px;
-
-  .hex-color-input {
-    text-align: center;
+    input {
+      width: 80px;
+    }
   }
 
-  input {
-    display: block;
-    height: 80px;
+  .hex {
+    margin: 30px auto;
     width: 200px;
-    border-radius: 5px;
-    font-size: 24px;
-    text-align: center;
-    margin: auto;
+
+    input {
+      width: 200px;
+    }
   }
 
-  label {
-    text-align: center;
+  .swatch-panel {
+    margin: 20px auto;
+    .swatch {
+      height: 200px;
+      width: 200px;
+      border: 1px solid #C4C4C4;
+      border-radius: 5px;
+    }
   }
-}
-
-.swatch-panel {
-  margin: 20px auto;
-  .swatch {
-    height: 200px;
-    width: 200px;
-    border: 1px solid #C4C4C4;
-    border-radius: 5px;
-  }
-}
-
-.rgb {
 }
